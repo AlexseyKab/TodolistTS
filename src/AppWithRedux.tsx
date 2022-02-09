@@ -34,7 +34,7 @@ export function AppWithRedux() {
 
     const tasks = useSelector<AppRootStateType, TasksStateType> ( (state) =>
         state.tasks)
-        //fkoohtroghrp
+
 
     const dispatch = useDispatch()
 
