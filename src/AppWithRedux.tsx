@@ -38,41 +38,41 @@ export const AppWithRedux = React.memo( () =>  {
 
     const dispatch = useDispatch()
 
-    function removeTask(id: string, todolistId: string) {
+    const removeTask = useCallback((id: string, todolistId: string) => {
         let action = removeTaskAC(id, todolistId)
         dispatch(action)
-    }
+    }, [])
 
-    function addTask(title: string, todolistId: string) {
+    const addTask = useCallback((title: string, todolistId: string) => {
         let action = addTaskAC(title, todolistId)
         dispatch(action)
-    }
+    }, [])
 
-    function changeStatus(id: string, isDone: boolean, todolistId: string) {
+    const changeStatus = useCallback( (id: string, isDone: boolean, todolistId: string) => {
         let action = changeTaskStatusAC(id, isDone, todolistId)
         dispatch(action)
-    }
+    }, [])
 
-    function changeTaskTitle(id: string, newTitle: string, todolistId: string) {
+    const changeTaskTitle = useCallback( (id: string, newTitle: string, todolistId: string) => {
         let action = changeTaskTitleAC(id, newTitle, todolistId)
         dispatch(action)
-    }
+    }, [])
 
 
-    function changeFilter(value: FilterValuesType, todolistId: string) {
+    const changeFilter = useCallback( (value: FilterValuesType, todolistId: string) => {
         let action = changeTodolistFilterAC(todolistId, value)
         dispatch(action)
-    }
+    }, [])
 
-    function removeTodolist(id: string) {
+    const removeTodolist = useCallback( (id: string) => {
         let action = removeTodolistAC(id)
         dispatch(action)
-    }
+    }, [])
 
-    function changeTodolistTitle(id: string, title: string) {
+    const changeTodolistTitle = useCallback((id: string, title: string) => {
         let action = changeTodolistTitleAC(id, title)
         dispatch(action)
-    }
+    }, [])
 
     const addTodolist = useCallback( (title: string) => {
         let action = addTodolistAC(title)
