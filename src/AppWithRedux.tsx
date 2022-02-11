@@ -1,4 +1,4 @@
-import React, {useReducer, useState} from 'react';
+import React, {useCallback, useReducer, useState} from 'react';
 import './App.css';
 import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
@@ -28,9 +28,9 @@ export type TasksStateType = {
 }
 
 
-export function AppWithRedux() {
+export const AppWithRedux = React.memo( () =>  {
     const todolists = useSelector<AppRootStateType, Array<TodolistType>> ( (state) =>
-    state.todolists)
+        state.todolists)
 
     const tasks = useSelector<AppRootStateType, TasksStateType> ( (state) =>
         state.tasks)
@@ -74,10 +74,10 @@ export function AppWithRedux() {
         dispatch(action)
     }
 
-    function addTodolist(title: string) {
+    const addTodolist = useCallback( (title: string) => {
         let action = addTodolistAC(title)
         dispatch(action)
-    }
+    }, [])
 
     return (
         <div className="App">
@@ -132,5 +132,5 @@ export function AppWithRedux() {
             </Container>
         </div>
     );
-}
+} )
 
