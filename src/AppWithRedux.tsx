@@ -28,7 +28,7 @@ export type TasksStateType = {
 }
 
 
-export const AppWithRedux = React.memo( () =>  {
+export const  AppWithRedux = React.memo( () =>  {
     const todolists = useSelector<AppRootStateType, Array<TodolistType>> ( (state) =>
         state.todolists)
 
