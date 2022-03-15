@@ -36,7 +36,7 @@ export const  AppWithRedux = React.memo( () =>  {
         state.tasks)
 
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch()//
 
     const removeTask = useCallback((id: string, todolistId: string) => {
         let action = removeTaskAC(id, todolistId)
