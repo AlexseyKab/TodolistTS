@@ -72,7 +72,7 @@ export const  AppWithRedux = React.memo( () =>  {
     const changeTodolistTitle = useCallback((id: string, title: string) => {
         let action = changeTodolistTitleAC(id, title)
         dispatch(action)
-    }, [dispatch])
+    }, [dispatch])//
 
     const addTodolist = useCallback( (title: string) => {
         let action = addTodolistAC(title)
