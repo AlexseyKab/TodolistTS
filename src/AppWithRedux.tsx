@@ -102,9 +102,6 @@ export const  AppWithRedux = React.memo( () =>  {
                             let allTodolistTasks = tasks[tl.id];
                             let tasksForTodolist = allTodolistTasks;
 
-
-
-
                             return <Grid item  key={tl.id}>
                                 <Paper style={{padding: "10px"}}>
                                     <Todolist
